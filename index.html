@@ -25,12 +25,16 @@
       position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
       border-radius: 22px; overflow: hidden;
     }
-    .flip-back { transform: rotateY(180deg); }
+    .flip-back { transform: rotateY(180deg); color: #fff8ee; }
     .flip-card:focus-visible .flip-inner { outline: 3px solid #d87632; outline-offset: 5px; border-radius: 22px; }
     .card-recipe { white-space: pre-line; }
     .filter-btn.active { background: #3e2418; color: #fff7ed; border-color: #3e2418; }
     .filter-btn:focus-visible, .flip-card:focus-visible { outline: 3px solid #d87632; outline-offset: 3px; }
     .is-hidden-card { display: none; }
+    /* Ensure visible contrast on light cards */
+    .canva-card { color: #2b1f18; }
+    /* Make tags on dark backgrounds readable */
+    header .canva-tag, .canva-banner { color: #fff8ee; }
     @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } }
   </style>
  </head>
@@ -39,10 +43,10 @@
    <div class="max-w-7xl mx-auto px-5 py-7 md:px-10 md:py-10">
     <div class="rounded-[28px] overflow-hidden bg-[#3e2418] shadow-xl grid md:grid-cols-[1.1fr_.9fr]">
      <div class="p-8 md:p-12 flex flex-col justify-center">
-      <div data-template-id="hero-kicker" class="canva-tag inline-flex self-start items-center gap-2 rounded-full bg-[#d87632] px-3 py-1.5 text-sm font-bold tracking-wide">สูตรยอดนิยม</div>
+      <div data-template-id="hero-kicker" class="canva-tag inline-flex self-start items-center gap-2 rounded-full bg-[#d87632] px-3 py-1.5 text-sm font-bold tracking-wide text-white">สูตรยอดนิยม</div>
       <h1 data-template-id="page-title" class="canva-text display-font mt-5 text-4xl leading-tight md:text-6xl">Barista Recipe Flip Cards</h1>
       <p data-template-id="hero-description" class="canva-text mt-5 max-w-xl text-base leading-7 md:text-lg">รวมสูตรเครื่องดื่มยอดนิยมพร้อมวิธีทำสั้น ๆ เหมาะสำหรับบาริสต้าและผู้ที่ชอบทำเครื่องดื่มที่บ้าน</p>
-      <div data-template-id="instruction-banner" class="canva-banner mt-7 flex items-center gap-3 rounded-2xl border border-[#855941] bg-[#4b2c20] px-4 py-3 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg> แตะการ์ดหรือกด Enter/Space เพื่อพลิกดูสูตร</div>
+      <div data-template-id="instruction-banner" class="canva-banner mt-7 flex items-center gap-3 rounded-2xl border border-[#855941] bg-[#4b2c20] px-4 py-3 text-sm text-[#fff8ee]"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg> แตะการ์ดหรือกด Enter/Space เพื่อพลิกดูสูตร</div>
      </div>
      <div class="relative min-h-[250px] md:min-h-full"><img data-template-id="hero-image" loading="lazy" class="canva-image absolute inset-0 w-full h-full object-cover opacity-90" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Barista"></div>
     </div>
@@ -74,7 +78,7 @@
         <h3 data-template-id="espresso-title" class="canva-text display-font mt-2 text-2xl">เอสเปรสโซ</h3><span data-template-id="flip-hint" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="espresso-recipe" class="canva-text card-recipe text-sm leading-6">เอสเปรสโซ — 1 ช็อต (30ml) • วิธีทำ: สกัดเอสเปรสโซจากผงกาแฟที่บดละเอียด.</p>
+        <p data-template-id="espresso-recipe" class="canva-text card-recipe text-sm leading-6">เอสเปรสโซ — 1 ช็อต (30ml)<br><br>วิธีทำ: สกัดเอสเปรสโซจากผงกาแฟที่บดละเอียด</p>
        </div>
       </div>
      </article>
@@ -86,7 +90,7 @@
         <h3 data-template-id="americano-title" class="canva-text display-font mt-2 text-2xl">อเมริกาโน่</h3><span data-template-id="flip-hint-2" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="americano-recipe" class="canva-text card-recipe text-sm leading-6">อเมริกาโน่ — เอสเปรสโซ 1 ช็อต + น้ำร้อน 90-120ml • เสิร์ฟร้อน</p>
+        <p data-template-id="americano-recipe" class="canva-text card-recipe text-sm leading-6">อเมริกาโน่<br><br>ส่วนผสม: เอสเปรสโซ 1 ช็อต + น้ำร้อน 90-120ml<br><br>เสิร์ฟร้อน</p>
        </div>
       </div>
      </article>
@@ -98,7 +102,7 @@
         <h3 data-template-id="longblack-title" class="canva-text display-font mt-2 text-2xl">ลองแบล็ค</h3><span data-template-id="flip-hint-3" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="longblack-recipe" class="canva-text card-recipe text-sm leading-6">ลองแบล็ค — เอสเปรสโซ 1 ช็อต เติมน้ำร้อนเล็กน้อยลงในแก้วแล้วเทช็อต</p>
+        <p data-template-id="longblack-recipe" class="canva-text card-recipe text-sm leading-6">ลองแบล็ค — เอสเปรสโซ 1 ช็อต<br><br>วิธีทำ: เติมน้ำร้อนเล็กน้อยลงในแก้วแล้วเทช็อต</p>
        </div>
       </div>
      </article>
@@ -110,7 +114,7 @@
         <h3 data-template-id="latte-title" class="canva-text display-font mt-2 text-2xl">ลาเต้</h3><span data-template-id="flip-hint-4" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="latte-recipe" class="canva-text card-recipe text-sm leading-6">ลาเต้ — เอสเปรสโซ 1 ช็อต + นมสตรีม 150-200ml • โรยฟองนมนิดหน่อย</p>
+        <p data-template-id="latte-recipe" class="canva-text card-recipe text-sm leading-6">ลาเต้ — เอสเปรสโซ 1 ช็อต + นมสตรีม 150-200ml<br><br>วิธีทำ: เทนมสตรีมลงในช็อตและปรับเทให้มีฟองบาง ๆ</p>
        </div>
       </div>
      </article>
@@ -122,7 +126,7 @@
         <h3 data-template-id="cappuccino-title" class="canva-text display-font mt-2 text-2xl">คาปูชิโน่</h3><span data-template-id="flip-hint-5" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="cappuccino-recipe" class="canva-text card-recipe text-sm leading-6">คาปูชิโน่ — เอสเปรสโซ 1 ช็อต + นมสตรีมและฟองในอัตราส่วน 1:1:1</p>
+        <p data-template-id="cappuccino-recipe" class="canva-text card-recipe text-sm leading-6">คาปูชิโน่ — เอสเปรสโซ 1 ช็อต<br><br>ส่วนผสม: นมสตรีม + ฟองนม ในอัตราส่วน 1:1<br><br>วิธีเสิร์ฟ: โรยผงโกโก้เล็กน้อย</p>
        </div>
       </div>
      </article>
@@ -134,7 +138,7 @@
         <h3 data-template-id="flatwhite-title" class="canva-text display-font mt-2 text-2xl">ฟลัตไวท์</h3><span data-template-id="flip-hint-6" class="canva-text mt-auto text-sm">แตะเพื่อดูสูตร</span>
        </div>
        <div class="flip-face flip-back bg-[#3e2418] p-6 text-[#fff8ee]">
-        <p data-template-id="flatwhite-recipe" class="canva-text card-recipe text-sm leading-6">ฟลัตไวท์ — เอสเปรสโซ 1 ช็อต + นมสตรีมเนียน ๆ เสิร์ฟในปริมาณน้อยกว่าลาเต้</p>
+        <p data-template-id="flatwhite-recipe" class="canva-text card-recipe text-sm leading-6">ฟลัตไวท์ — เอสเปรสโซ 1 ช็อต<br><br>วิธีทำ: เติมนมสตรีมเนียน ๆ ปริมาณน้อยกว่าลาเต้เพื่อให้รสกาแฟโดดเด่น</p>
        </div>
       </div>
      </article>
